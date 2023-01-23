@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @var \TresdTech\FinalProject\Block\Display $block
+ */
+echo $block->sayHello();
+?>
+
+<style>
+table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+tr:nth-child(even) { background-color: #dddddd; }
+.post-id{width:2%} .post-name{width:30%}
+
+</style>
+
+<h1>Form  page</h1>
+
+<form class ="form" action="<?php echo $block->getFormAction() ?>" method="post" data-mage-init='{"validation": {}}'>
+<div class = "campos">
+    <label class = "label" for = "first_name"> <span><?php  echo __('First Name') ?></span></label>
+    <input title= "Fisrt Name" name="firstname" id = "first_name" type="text" data-validate="{required:true,'validate-letters':true}">
+    <label class = "label" for = "last_name"> <span><?php  echo __('Last Name') ?></span></label>
+    <input name="lastname" type="text" id = "last_name" type="text" data-validate="{required:true,'validate-data':true}">
+    <label class = "label" for = "email"> <span><?php  echo __('E-mail') ?></span></label>
+    <input name="email" type="text" id = "email" type="text" data-validate="{required:true, 'validate-email':true}">
+    <label class = "label" for = "phone"> <span><?php  echo __('Telephone') ?></span></label>
+    <input name="phone" type="text"id = "phone" type="text" data-validate="{required:true, 'validate-digits':true}" >
+</div>
+    <input name="bookingTime" type="date">
+    <input type="submit" value="Send Data">
+</form>
+
+<table>
+  <tr>
+    <th class="post-id">Id</th>
+    <th class="first-name">First Name</th>
+    <th class="last-name">Last Name</th>
+    <th class="email">E-mail</th>
+    <th class="telephone">Telephone</th>
+   
+  </tr>
+    <?php
+       echo  $block->getPostCollection();
+     
+    ?>
+</table>
+
+</body>
+</html>

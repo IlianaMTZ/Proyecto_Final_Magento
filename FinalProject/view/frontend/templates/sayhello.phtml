@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @var \TresdTech\FinalProject\Block\Display $block
+ */
+
+echo $block->sayHello();
+?>
+
+
+<h1>Form  page</h1>
+
+<form class ="form" action="<?php echo $block->getFormAction() ?>" method="post" data-mage-init='{"validation": {}}'>
+<div class = "campos">
+    <label class = "label" for = "first_name"> <span><?php  echo __('First Name') ?></span></label>
+    <input title= "Fisrt Name" name="firstname" id = "first_name" type="text" data-validate="{required:true,'validate-letters':true}">
+    <label class = "label" for = "last_name"> <span><?php  echo __('Last Name') ?></span></label>
+    <input name="lastname" type="text" id = "last_name" type="text" data-validate="{required:true,'validate-data':true}">
+ <label class = "label" for = "email"> <span><?php  echo __('E-mail') ?></span></label>
+    <input name="email" type="text" id = "email" type="text" data-validate="{required:true, 'validate-email':true}">
+    <label class = "label" for = "phone"> <span><?php  echo __('Telephone') ?></span></label>
+    <input name="phone" type="text"id = "phone" type="text" data-validate="{required:true, 'validate-digits':true}" >
+</div>
+    
+    <input  type="submit" value="Send Data">
+</form>
+
+</body>
+</html>
