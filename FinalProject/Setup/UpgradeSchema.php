@@ -32,7 +32,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
 					->addColumn(
 					'first_name',
 					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-					255,
+					'255',
 					['nullable => false'],
 					'First Name'
 				)
@@ -46,7 +46,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
 					->addColumn(
 					'email',
 					\Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-					'64k',
+					'255',
 					['nullable' => false,],
 					'Email'
 				)

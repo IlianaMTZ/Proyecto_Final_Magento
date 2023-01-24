@@ -16,4 +16,8 @@ class Display extends \Magento\Framework\View\Element\Template
 		$post = $this->_postFactory->create();
 		return $post->getCollection();
 	}
+	public function getFormAction()
+	{
+		return $this->getUrl('finalproject/index/submit',['_secure' => true]);
+	}
 }
